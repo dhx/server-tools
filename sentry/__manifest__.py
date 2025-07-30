@@ -23,5 +23,8 @@
     "depends": [
         "base",
     ],
+    "data": [
+        "views/sentry_test_views.xml",
+    ],
     "post_load": "post_load",
 }

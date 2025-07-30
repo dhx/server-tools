@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sentry Test Menu -->
+        <menuitem id="menu_sentry_test" 
+                  name="Sentry Tests" 
+                  parent="base.menu_administration" 
+                  sequence="100"/>
+
+        <!-- Test Actions -->
+        <record id="action_test_error_logging" model="ir.actions.server">
+            <field name="name">Test Error Logging</field>
+            <field name="model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="binding_model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="state">code</field>
+            <field name="code">action = model.test_error_logging()</field>
+        </record>
+
+        <record id="action_test_warning_logging" model="ir.actions.server">
+            <field name="name">Test Warning Logging</field>
+            <field name="model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="binding_model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="state">code</field>
+            <field name="code">action = model.test_warning_logging()</field>
+        </record>
+
+        <record id="action_test_exception_capture" model="ir.actions.server">
+            <field name="name">Test Exception Capture</field>
+            <field name="model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="binding_model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="state">code</field>
+            <field name="code">action = model.test_exception_capture()</field>
+        </record>
+
+        <record id="action_test_custom_context" model="ir.actions.server">
+            <field name="name">Test Custom Context</field>
+            <field name="model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="binding_model_id" ref="sentry.model_sentry_test_wizard"/>
+            <field name="state">code</field>
+            <field name="code">action = model.test_custom_context()</field>
+        </record>
+
+        <!-- Menu Items -->
+        <menuitem id="menu_test_error_logging"
+                  name="Test Error Logging"
+                  parent="menu_sentry_test"
+                  action="action_test_error_logging"
+                  sequence="10"/>
+
+        <menuitem id="menu_test_warning_logging"
+                  name="Test Warning Logging"
+                  parent="menu_sentry_test"
+                  action="action_test_warning_logging"
+                  sequence="20"/>
+
+        <menuitem id="menu_test_exception_capture"
+                  name="Test Exception Capture"
+                  parent="menu_sentry_test"
+                  action="action_test_exception_capture"
+                  sequence="30"/>
+
+        <menuitem id="menu_test_custom_context"
+                  name="Test Custom Context"
+                  parent="menu_sentry_test"
+                  action="action_test_custom_context"
+                  sequence="40"/>
+
+    </data>
+</odoo>
